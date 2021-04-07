@@ -6,7 +6,7 @@ function Door(ID = 1, isOpen = false, point = 0, element = "ID") {
 }
 
 let point = 0;
-let leftClick = 10;
+let leftClick = 100;
 // Door.prototype.clicked = function () {
 //     if (this.isOpen) {
 //         point += this.point;
@@ -20,12 +20,12 @@ Door.prototype.closeDoor = function () {
     this.update();
 }
 Door.prototype.update = function () {
-    this.point = Math.floor(Math.random() * 3) + 7;
+    this.point = Math.floor(Math.random() * 50) + 50;
 }
 let gameOver = function () {
     alert("you got " + point + " points");
     point = 0;
-    leftClick = 10;
+    leftClick = 100;
     document.getElementById("leftClick").innerHTML = "leftClick: " + leftClick;
     document.getElementById("point").innerHTML = "Point: " + point;
     for (let i = 0; i < 3; i++)
