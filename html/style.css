@@ -1,0 +1,18 @@
+.door{
+    border: 1px solid red;
+    height: 30em;
+    width: 20em;
+    font-size: 2em;
+    text-align: center;
+    justify-content: center;
+}
+.contain{
+    display: flex;
+}
+.point{
+    display:inline-block;
+    border: 1px solid red;
+    height: 4em;
+    width: 4em; 
+    font-size: 2em;
+}

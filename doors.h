@@ -6,9 +6,12 @@ class doors
 private:
     int m_ID;
     bool m_isOpen{false};
+    int m_point{0};
 
 public:
-    doors(int ID = 0, bool isOpen = false) : m_ID{ID}, m_isOpen{isOpen} {};
+    doors(int ID = 0, bool isOpen = false) : m_ID{ID}, m_isOpen{isOpen}
+    {
+    };
     int click()
     {
         if (m_isOpen)
@@ -18,16 +21,22 @@ public:
         else
         {
             m_isOpen = true;
+            updatePoint();
+            showDoor();
             return 0;
         }
     };
+    void updatePoint()
+    {
+        m_point = rand() % 1000 + 1;
+    }
     int getID()
     {
         return m_ID;
     }
     int point()
     {
-        return rand() % 10;
+        return m_point;
     };
     void closeDoor()
     {
@@ -35,7 +44,7 @@ public:
     }
     void showDoor()
     {
-        std::cout << "ID: " << m_ID << ", Is Open? " << std::boolalpha << m_isOpen << '\n';
+        std::cout << "ID: " << m_ID << ", Is Open? " << std::boolalpha << m_isOpen << " point: " << m_point << '\n';
     }
     ~doors();
 };
