@@ -1,5 +1,5 @@
 #pragma once
-#include <stdlib.h> 
+#include <stdlib.h>
 #include <iostream>
 class doors
 {
@@ -21,6 +21,10 @@ public:
             return 0;
         }
     };
+    int getID()
+    {
+        return m_ID;
+    }
     int point()
     {
         return rand() % 10;
